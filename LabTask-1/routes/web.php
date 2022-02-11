@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PagesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/login',function(){
-    return "ok";
-});
+
+Route::get('/login',[PagesController::class, 'login']);
+Route::get('/student',[PagesController::class, 'student']);
+Route::get('/admin',[PagesController::class,'admin']);
+Route::get('/homepage',[PagesController::class,'homepage']);
+Route::get('/contact',[PagesController::class,'contact']);
